@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { ThemeToggleButton } from "@/components/common/ThemeToggleButton";
 
 export const metadata: Metadata = {
   title: "Nova Analytics — Transform Your Data Into Decisions",
@@ -149,7 +150,8 @@ export default function LandingPage() {
             <a href="#about" className="hover:text-gray-900 dark:hover:text-white transition-colors">About</a>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <ThemeToggleButton compact />
             <Link
               href="/signin"
               className="hidden text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white sm:block"
