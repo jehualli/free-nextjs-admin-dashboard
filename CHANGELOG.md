@@ -15,6 +15,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `.github/workflows/ci.yml` — GitHub Actions pipeline: `lint` then `build` on every push/PR to `main` and `nova-analytics`; Supabase env vars read from repo secrets with safe placeholder fallback
 - Vercel Analytics (`@vercel/analytics`) — page-view tracking injected in root layout, active on all routes
 
+### Fixed
+- `jsvectormap.d.ts` — suppress `no-explicit-any` on third-party declaration
+- `StatisticsChart.tsx` — escape apostrophe in JSX string (`you've` → `you&apos;ve`)
+- `Calendar.tsx` — suppress `react-hooks/purity` on `Date.now()` inside event handler
+- `UserDropdown.tsx` — remove unused `Link` import (replaced by `<button>` in Phase 3)
+- `ThemeContext.tsx` — suppress `set-state-in-effect` for intentional localStorage hydration
+- `AppSidebar.tsx` — suppress `set-state-in-effect` for pathname-driven submenu reset
+
 ---
 
 ## [1.4.0] — 2026-05-29 · Phase 4: Deployment
