@@ -14,6 +14,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - `.env.local.example` — documents required environment variables
 - README rewritten: setup instructions, tech stack, env vars, deployment steps, project structure
+- Deployed to Vercel production: https://free-nextjs-admin-dashboard-zeta.vercel.app
 
 ### Changed
 - Removed all TailAdmin branding from README
