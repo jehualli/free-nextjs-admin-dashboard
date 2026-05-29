@@ -9,6 +9,22 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.2.0] — 2026-05-29 · Phase 2: Landing Page
+
+### Added
+- Public landing page at `/` with Hero, Stats, Features (3 cards), CTA, and Footer sections
+- Fully responsive and dark-mode compatible
+- Dashboard preview mockup in the hero section
+- Sticky navigation with Log in / Start Free Trial CTAs
+
+### Changed
+- All dashboard routes moved under `/dashboard` path segment (`/` → `/dashboard`, `/calendar` → `/dashboard/calendar`, etc.)
+- Sidebar nav paths updated with `/dashboard` prefix throughout
+- Sidebar and header logo links updated to `/dashboard`
+- User dropdown profile links updated to `/dashboard/profile`
+
+---
+
 ## [1.1.0] — 2026-05-29 · Phase 1: White-label
 
 ### Changed
