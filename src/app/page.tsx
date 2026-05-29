@@ -50,6 +50,80 @@ const features = [
   },
 ];
 
+const plans = [
+  {
+    name: "Starter",
+    price: "Free",
+    period: "",
+    description: "Perfect for individuals and small projects getting started with analytics.",
+    cta: "Start Free",
+    href: "/signup",
+    featured: false,
+    features: [
+      "1 workspace",
+      "Up to 5 dashboards",
+      "7-day data history",
+      "Basic charts & tables",
+      "Email support",
+    ],
+  },
+  {
+    name: "Pro",
+    price: "$29",
+    period: "/ month",
+    description: "For growing teams that need deeper insights and collaboration tools.",
+    cta: "Start Free Trial",
+    href: "/signup",
+    featured: true,
+    features: [
+      "5 workspaces",
+      "Unlimited dashboards",
+      "1-year data history",
+      "All chart types",
+      "Team collaboration",
+      "Custom reports & scheduling",
+      "Priority support",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    period: "",
+    description: "Tailored for large organisations with advanced security and compliance needs.",
+    cta: "Contact Sales",
+    href: "/signin",
+    featured: false,
+    features: [
+      "Unlimited workspaces",
+      "Unlimited dashboards",
+      "Unlimited data history",
+      "SSO / SAML",
+      "Dedicated account manager",
+      "SLA guarantee",
+      "Custom integrations",
+    ],
+  },
+];
+
+const values = [
+  {
+    title: "Data transparency",
+    description: "We believe your data should always be yours — readable, exportable, and free from lock-in.",
+  },
+  {
+    title: "Speed without compromise",
+    description: "Sub-50ms query times aren't a marketing number. We architect every layer around it.",
+  },
+  {
+    title: "Built for teams",
+    description: "Analytics tools that only work for data engineers have failed. We design for every role on your team.",
+  },
+  {
+    title: "Always improving",
+    description: "We ship weekly. If something isn't working for you, we want to know — and we will fix it.",
+  },
+];
+
 const stats = [
   { value: "10k+", label: "Companies using Nova" },
   { value: "99.9%", label: "Uptime SLA" },
@@ -227,6 +301,142 @@ export default function LandingPage() {
                 <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400">{f.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing ────────────────────────────────────────────────────── */}
+      <section id="pricing" className="bg-gray-50 px-6 py-24 dark:bg-gray-800/50">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+              Simple, transparent pricing
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-gray-500 dark:text-gray-400">
+              Start free and scale as you grow. No hidden fees, no surprise bills.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative flex flex-col rounded-2xl p-8 ${
+                  plan.featured
+                    ? "bg-brand-500 text-white shadow-2xl shadow-brand-500/30 ring-2 ring-brand-400"
+                    : "border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
+                }`}
+              >
+                {plan.featured && (
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-cyan-400 px-4 py-1 text-xs font-bold text-gray-900">
+                    MOST POPULAR
+                  </span>
+                )}
+
+                <div className="mb-6">
+                  <h3 className={`text-lg font-semibold ${plan.featured ? "text-white" : "text-gray-900 dark:text-white"}`}>
+                    {plan.name}
+                  </h3>
+                  <div className="mt-3 flex items-end gap-1">
+                    <span className={`text-4xl font-bold ${plan.featured ? "text-white" : "text-gray-900 dark:text-white"}`}>
+                      {plan.price}
+                    </span>
+                    {plan.period && (
+                      <span className={`mb-1 text-sm ${plan.featured ? "text-brand-200" : "text-gray-400"}`}>
+                        {plan.period}
+                      </span>
+                    )}
+                  </div>
+                  <p className={`mt-3 text-sm ${plan.featured ? "text-brand-100" : "text-gray-500 dark:text-gray-400"}`}>
+                    {plan.description}
+                  </p>
+                </div>
+
+                <ul className="mb-8 flex-1 space-y-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2.5 text-sm">
+                      <svg
+                        className={`h-4 w-4 shrink-0 ${plan.featured ? "text-cyan-300" : "text-brand-500"}`}
+                        viewBox="0 0 16 16" fill="none"
+                      >
+                        <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      <span className={plan.featured ? "text-white" : "text-gray-600 dark:text-gray-300"}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href={plan.href}
+                  className={`block rounded-xl py-3 text-center text-sm font-semibold transition-colors ${
+                    plan.featured
+                      ? "bg-white text-brand-600 hover:bg-brand-50"
+                      : "border border-brand-500 text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-900/20"
+                  }`}
+                >
+                  {plan.cta}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── About ──────────────────────────────────────────────────────── */}
+      <section id="about" className="px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+            {/* Left — story */}
+            <div>
+              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600 dark:border-brand-800 dark:bg-brand-900/30 dark:text-brand-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+                Our story
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+                Built by data people,<br />for data people
+              </h2>
+              <p className="mt-6 text-gray-500 dark:text-gray-400 leading-relaxed">
+                Nova Analytics was founded after years of watching great teams drown in spreadsheets
+                and pay for enterprise tools that took months to set up. We believed there had to be
+                a better way — a platform that gives you enterprise-grade analytics without the
+                enterprise-grade headache.
+              </p>
+              <p className="mt-4 text-gray-500 dark:text-gray-400 leading-relaxed">
+                Today, over 10,000 companies use Nova Analytics to track what matters, collaborate
+                faster, and make decisions they can stand behind.
+              </p>
+              <div className="mt-8 flex gap-4">
+                <Link
+                  href="/signup"
+                  className="rounded-xl bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600 transition-colors"
+                >
+                  Join us
+                </Link>
+                <a
+                  href="#features"
+                  className="rounded-xl border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+                >
+                  See features
+                </a>
+              </div>
+            </div>
+
+            {/* Right — values grid */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {values.map((v) => (
+                <div
+                  key={v.title}
+                  className="rounded-2xl border border-gray-100 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500">
+                    <span className="h-2 w-2 rounded-full bg-white" />
+                  </div>
+                  <h3 className="mb-2 text-sm font-semibold text-gray-900 dark:text-white">{v.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400">{v.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

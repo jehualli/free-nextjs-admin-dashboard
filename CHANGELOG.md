@@ -9,6 +9,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.7.0] — 2026-05-29 · Pricing + About sections
+
+### Added
+- **Pricing section** (`#pricing`) — three-tier cards: Starter (Free), Pro ($29/mo, highlighted), Enterprise (Custom); each with feature list and CTA
+- **About section** (`#about`) — two-column layout: company story on the left, four value cards on the right
+- Nav `#pricing` and `#about` anchor links now resolve to real sections
+
+---
+
 ## [1.6.0] — 2026-05-29 · Favicon + README polish
 
 ### Added
