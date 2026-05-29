@@ -2,6 +2,8 @@
 
 A white-labeled analytics dashboard built on Next.js 16, Tailwind CSS v4, and Supabase Auth.
 
+**Live URL:** https://free-nextjs-admin-dashboard-zeta.vercel.app
+
 ---
 
 ## Tech Stack
@@ -16,6 +18,7 @@ A white-labeled analytics dashboard built on Next.js 16, Tailwind CSS v4, and Su
 | Calendar | FullCalendar 6 |
 | Date picker | flatpickr |
 | Map | react-jvectormap |
+| Analytics | Vercel Analytics |
 
 ---
 
@@ -74,6 +77,7 @@ Open [http://localhost:3000](http://localhost:3000).
 src/
 ├── app/
 │   ├── page.tsx                  # Public landing page (/)
+│   ├── icon.svg                  # Nova Analytics favicon
 │   ├── (admin)/                  # Dashboard shell (sidebar + header)
 │   │   └── dashboard/            # All /dashboard/* routes
 │   └── (full-width-pages)/       # Auth pages + error pages
@@ -136,7 +140,20 @@ After your first deploy, add the production URL to Supabase:
 
 ## Test Credentials
 
-Once deployed, create an account via `/signup` using any email. Supabase will send a confirmation email — click the link to activate, then sign in.
+Use these credentials to log in and explore the dashboard without creating an account:
+
+| Field | Value |
+|-------|-------|
+| Email | `demo@novaanalytics.io` |
+| Password | `NovaDemo2026!` |
+
+---
+
+## Known Limitations
+
+- **No automated tests** — unit, integration, and E2E tests are not implemented in this version.
+- **No custom domain** — the app is served from a default `*.vercel.app` subdomain.
+- **Social auth buttons** — Google and X (Twitter) sign-in buttons are visible on the auth forms but are not wired up; only email/password authentication is functional.
 
 ---
 

@@ -9,6 +9,17 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.6.0] — 2026-05-29 · Favicon + README polish
+
+### Added
+- `src/app/icon.svg` — Nova Analytics favicon (indigo mark + cyan dot); Next.js App Router auto-picks it up, replacing the original TailAdmin `.ico`
+- Test credentials documented in README (`demo@novaanalytics.io` / `NovaDemo2026!`)
+- Known Limitations section in README (no tests, no custom domain, social auth buttons not wired)
+- Live URL added to README header
+- Vercel Analytics added to tech stack table in README
+
+---
+
 ## [1.5.0] — 2026-05-29 · Phase 5: CI/CD + Monitoring
 
 ### Added
