@@ -9,6 +9,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.5.0] — 2026-05-29 · Phase 5: CI/CD + Monitoring
+
+### Added
+- `.github/workflows/ci.yml` — GitHub Actions pipeline: `lint` then `build` on every push/PR to `main` and `nova-analytics`; Supabase env vars read from repo secrets with safe placeholder fallback
+- Vercel Analytics (`@vercel/analytics`) — page-view tracking injected in root layout, active on all routes
+
+---
+
 ## [1.4.0] — 2026-05-29 · Phase 4: Deployment
 
 ### Added
