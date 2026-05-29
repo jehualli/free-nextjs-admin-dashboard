@@ -9,6 +9,25 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.3.0] — 2026-05-29 · Phase 3: Authentication
+
+### Added
+- Supabase Auth integration (`@supabase/supabase-js`, `@supabase/ssr`)
+- `src/lib/supabase/client.ts` — browser Supabase client
+- `src/lib/supabase/server.ts` — server-side Supabase client (Server Components / Route Handlers)
+- `src/proxy.ts` — Next.js 16 proxy (middleware) protecting `/dashboard/*`; unauthenticated users redirected to `/signin`, authenticated users on auth pages redirected to `/dashboard`
+- `/auth/callback` route handler — exchanges Supabase email confirmation codes for sessions
+- `.env.local.example` for environment variable documentation
+
+### Changed
+- `SignInForm` — wired to `supabase.auth.signInWithPassword`; shows loading state, inline error messages, redirects to `/dashboard` on success
+- `SignUpForm` — wired to `supabase.auth.signUp` with first/last name metadata; shows "check your email" confirmation screen on success
+- `UserDropdown` — sign-out link converted to button calling `supabase.auth.signOut()` with router redirect
+- `InputField` — added `value` and `required` props for controlled form support
+- Sign-in/sign-up "Back to dashboard" links updated to "Back to home"
+
+---
+
 ## [1.2.0] — 2026-05-29 · Phase 2: Landing Page
 
 ### Added

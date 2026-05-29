@@ -1,11 +1,16 @@
 import SignInForm from "@/components/auth/SignInForm";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "Next.js SignIn Page | Nova Analytics",
-  description: "This is Next.js Signin Page Nova Analytics",
+  title: "Sign In | Nova Analytics",
+  description: "Sign in to your Nova Analytics account.",
 };
 
 export default function SignIn() {
-  return <SignInForm />;
+  return (
+    <Suspense>
+      <SignInForm />
+    </Suspense>
+  );
 }
