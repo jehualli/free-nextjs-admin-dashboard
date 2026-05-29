@@ -171,7 +171,7 @@ export default function LandingPage() {
       {/* ── Hero ───────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden px-6 pb-12 pt-20 text-center md:pt-28">
         {/* Background gradient blobs */}
-        <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-brand-500/10 blur-3xl" />
           <div className="absolute top-10 right-0 h-72 w-72 rounded-full bg-cyan-400/10 blur-2xl" />
         </div>
@@ -444,9 +444,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden px-6 py-24">
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-brand-500" />
+      <section className="relative overflow-hidden bg-brand-500 px-6 py-24">
+        <div className="pointer-events-none absolute inset-0">
           <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-400/50 blur-3xl" />
           <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-brand-700/50 blur-3xl" />
         </div>
