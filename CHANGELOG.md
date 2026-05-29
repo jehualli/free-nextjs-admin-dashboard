@@ -9,6 +9,17 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.4.0] — 2026-05-29 · Phase 4: Deployment
+
+### Added
+- `.env.local.example` — documents required environment variables
+- README rewritten: setup instructions, tech stack, env vars, deployment steps, project structure
+
+### Changed
+- Removed all TailAdmin branding from README
+
+---
+
 ## [1.3.0] — 2026-05-29 · Phase 3: Authentication
 
 ### Added
