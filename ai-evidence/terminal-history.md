@@ -97,7 +97,11 @@ Claude Code proposed the Nova Analytics color system:
 - Accent: `#06b6d4` (cyan)
 - Dark bg: `#0f172a`
 
-User created logo SVGs based on this palette.
+Candidate said they would create and drop a logo file. No file was ever provided.
+Claude Code created four placeholder SVG logos during Phase 1 rather than blocking:
+`logo.svg`, `logo-dark.svg`, `logo-icon.svg`, `auth-logo.svg` — all hand-coded SVGs
+with an indigo square, white zigzag "N" path, and cyan accent dot.
+
 "go ahead" → Phase 1 started at 12:55.
 
 ---

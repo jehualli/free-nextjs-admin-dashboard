@@ -79,7 +79,7 @@ Then **2 follow-up questions:**
 
 ### Step 4 — Brand Palette Definition (12:30 – 12:55)
 
-Claude Code proposed the Nova Analytics color system before the user created the logo:
+Claude Code proposed the Nova Analytics color system:
 
 | Token | Hex | Usage |
 |-------|-----|-------|
@@ -90,7 +90,16 @@ Claude Code proposed the Nova Analytics color system before the user created the
 
 **Reasoning:** "Nova" implies a new star / supernova → space/cosmos feel. Indigo reads as technical and trustworthy (consistent with analytics tools like Linear, PostHog). Cyan accent gives visual contrast on charts without clashing.
 
-The user used this palette to create the logo SVGs, then returned with "go ahead" to start Phase 1.
+The candidate said they would create a logo file and drop it into the project. When Phase 1 started and no file was dropped, Claude Code created **four placeholder SVG logos** itself rather than blocking:
+
+| File | Description |
+|------|-------------|
+| `public/images/logo/logo.svg` | Horizontal wordmark — indigo square icon + "Nova Analytics" text (light mode) |
+| `public/images/logo/logo-dark.svg` | Same, white text for dark mode |
+| `public/images/logo/logo-icon.svg` | Icon only — for collapsed sidebar state |
+| `public/images/logo/auth-logo.svg` | Larger version for the auth panel background |
+
+Each logo uses: indigo rounded rectangle (`#4f46e5`), white zigzag "N" path, cyan accent dot (`#06b6d4`), and "Nova Analytics" as an SVG `<text>` element. These are placeholders — the candidate can swap them with professional assets at any time by replacing the four SVG files.
 
 ---
 
