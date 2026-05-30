@@ -5,15 +5,100 @@
 
 ---
 
-## Project Setup
+## Pre-Phase — Discovery & Setup (11:50 – 12:55)
+
+### /init — Codebase Analysis
+
+Claude Code ran the `/init` skill. Every command below was read-only — no files modified yet.
 
 ```bash
-# Claude Code initialized the project
+# Map the file tree
+find . -maxdepth 3 -type f | grep -v node_modules | grep -v ".next" | grep -v ".git" | sort
+
+# Read project metadata
+cat package.json
+
+# Explore directory structure
+ls -la src/
+ls -la src/app/
+ls -la src/components/
+ls -la src/layout/
+ls -la src/context/
+ls -la src/hooks/
+
+# Understand the app architecture
+cat src/app/layout.tsx
+cat src/app/(admin)/layout.tsx
+cat src/context/SidebarContext.tsx
+cat src/context/ThemeContext.tsx
+cat next.config.ts
+cat tsconfig.json
+cat src/app/(admin)/page.tsx
+cat src/layout/AppSidebar.tsx       # (first 120 lines)
+cat src/layout/AppHeader.tsx
+cat src/components/ecommerce/StatisticsChart.tsx   # (first 40 lines)
+cat prettier.config.js
+cat eslint.config.mjs
+
+# Check git state
 git status
 git log --oneline -5
-ls -la
-cat package.json
 ```
+
+**Result:** `CLAUDE.md` written — routes, providers, component map, key patterns.
+
+```bash
+# Commit: Claude Code init
+git add CLAUDE.md package-lock.json
+git commit -m "claude init and npm installation"
+# → a91d789
+```
+
+---
+
+### deliverables.md Analysis
+
+```bash
+# User added the assignment brief
+# Claude Code read it:
+cat deliverables.md
+
+# Cross-referenced requirements against current codebase state
+# Identified: no landing page, no auth backend, no deployment, no CI
+# Proposed 5-phase plan → user confirmed approach
+```
+
+```bash
+# Commit: deliverables file
+git commit -m "created deliverables file for claude"
+# → b6ff97e
+```
+
+---
+
+### Requirements Dialogue (no terminal commands — conversational)
+
+Claude Code asked 4 structured questions via `AskUserQuestion`:
+- Auth provider → **Supabase**
+- Landing page routing → **`/` = landing, `/dashboard` = app**
+- Branding → **Claude defines palette, user creates logo**
+- Extra credit → **CI/CD + Vercel Analytics**
+
+Then 2 follow-up questions:
+- Logo delivery → **drop file in project folder**
+- Supabase status → **already created, URL + key ready**
+
+---
+
+### Brand Palette Defined (no terminal commands — design decision)
+
+Claude Code proposed the Nova Analytics color system:
+- Primary: `#4f46e5` (indigo)
+- Accent: `#06b6d4` (cyan)
+- Dark bg: `#0f172a`
+
+User created logo SVGs based on this palette.
+"go ahead" → Phase 1 started at 12:55.
 
 ---
 
