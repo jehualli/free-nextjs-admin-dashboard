@@ -9,6 +9,28 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.9.0] — 2026-05-29 · Custom domain + CTA bugfix
+
+### Added
+- Custom domain `www.novaanalytics.xyz` configured on Vercel
+
+### Fixed
+- CTA section background invisible on all pages — `globals.css` applies `z-1` to `<body>`, causing any `-z-10` child element to render behind the body background. Moved `bg-brand-500` directly onto `<section>` and removed the negative z-index wrapper
+- Hero gradient blobs also affected by same bug — replaced `-z-10` with `overflow-hidden` on the blob container
+
+---
+
+## [1.8.0] — 2026-05-29 · Dark mode toggle on landing page
+
+### Added
+- Dark mode toggle button in landing page navigation header (between nav links and auth buttons) — consistent with Vercel/GitHub/Linear pattern, visible on all breakpoints
+
+### Fixed
+- `ThemeToggleButton` — added missing `"use client"` directive; was only working because it was always inside other client components, would fail when imported into a Server Component
+- Added `compact` prop to `ThemeToggleButton` for a smaller borderless nav variant; dashboard header keeps its original bordered circle style unchanged
+
+---
+
 ## [1.7.0] — 2026-05-29 · Pricing + About sections
 
 ### Added

@@ -3,7 +3,7 @@
 Step-by-step checklist to verify every deliverable is working correctly.
 Run against the live URL or `npm run dev` locally.
 
-**Base URL (prod):** https://free-nextjs-admin-dashboard-zeta.vercel.app  
+**Base URL (prod):** https://www.novaanalytics.xyz  
 **Base URL (local):** http://localhost:3000
 
 ---
@@ -14,7 +14,7 @@ Run against the live URL or `npm run dev` locally.
 |---|------------|-----------------|
 | 1.1 | Open the base URL | Landing page loads — **not** the dashboard |
 | 1.2 | Read the header | Nova Analytics logo visible (light mode) |
-| 1.3 | Scroll through the page | Five sections render in order: Nav → Hero → Stats → Features → CTA → Footer |
+| 1.3 | Scroll through the page | Eight sections render in order: Nav → Hero → Stats → Features → Pricing → About → CTA → Footer |
 | 1.4 | Check the hero headline | "Transform Your Data Into Decisions" |
 | 1.5 | Check the dashboard mockup | Browser-chrome card with mini bar chart and three metric tiles |
 | 1.6 | Check the Stats bar | Four numbers: 10k+ / 99.9% / 2M+ / <50ms |
@@ -23,8 +23,18 @@ Run against the live URL or `npm run dev` locally.
 | 1.9 | Go back, click **Log in** (hero) | Redirects to `/signin` |
 | 1.10 | Click **Start Free Trial** (CTA section) | Redirects to `/signup` |
 | 1.11 | Click **Log in** (CTA section) | Redirects to `/signin` |
-| 1.12 | Check the footer | "© 2026 Nova Analytics" — no TailAdmin text anywhere |
-| 1.13 | Resize to mobile (< 768 px) | Hamburger nav replaces desktop links; all sections stack vertically |
+| 1.8 | Click **Start Free Trial** (hero) | Redirects to `/signup` |
+| 1.9 | Go back, click **Log in** (hero) | Redirects to `/signin` |
+| 1.10 | Click **#Pricing** nav link | Smooth scrolls to Pricing section |
+| 1.11 | Click **#About** nav link | Smooth scrolls to About section |
+| 1.12 | Check Pricing section | Three cards: Starter (Free) / Pro ($29, "MOST POPULAR" badge) / Enterprise (Custom) — each with feature list |
+| 1.13 | Check Pro card styling | Highlighted with indigo background and cyan badge |
+| 1.14 | Check About section | Two-column: company story left, four value cards right |
+| 1.15 | Click **Join us** in About | Redirects to `/signup` |
+| 1.16 | Click **Start Free Trial** (CTA section) | Redirects to `/signup` |
+| 1.17 | Click **Log in** (CTA section) | Redirects to `/signin`; button text visible on indigo background |
+| 1.18 | Check the footer | "© 2026 Nova Analytics" — no TailAdmin text anywhere |
+| 1.19 | Resize to mobile (< 768 px) | Hamburger nav replaces desktop links; all sections stack vertically; pricing cards stack |
 
 ---
 
@@ -37,6 +47,8 @@ Run against the live URL or `npm run dev` locally.
 | 2.3 | Toggle dark mode on the dashboard | Logo switches to white wordmark version |
 | 2.4 | Inspect primary color (buttons, active nav) | Indigo `#4f46e5` — not the old blue `#465fff` |
 | 2.5 | Search for "TailAdmin" on any visible page | Should appear nowhere |
+| 2.6 | Click the ☀/🌙 toggle in the landing nav | Page switches between light and dark mode |
+| 2.7 | Toggle dark on landing, navigate to `/dashboard` | Dark mode persists across pages (shared ThemeContext) |
 
 ---
 
@@ -174,5 +186,11 @@ Visit each route from the sidebar and confirm it loads without errors.
 
 ## Quick Test Credentials
 
-Create an account via `/signup` using any real email address.
-Supabase will send a confirmation link — click it once, then use those credentials for all sign-in tests.
+Use these pre-confirmed credentials to skip the signup flow:
+
+| Field | Value |
+|-------|-------|
+| Email | `demo@novaanalytics.io` |
+| Password | `NovaDemo2026!` |
+
+Or create a fresh account via `/signup` with any real email — Supabase will send a confirmation link.

@@ -2,7 +2,7 @@
 **Assignment:** AI Agent Engineer Trial — Technical Assignment  
 **Candidate:** Jacobo González  
 **Audited:** 2026-05-29  
-**Live URL:** https://free-nextjs-admin-dashboard-zeta.vercel.app  
+**Live URL:** https://www.novaanalytics.xyz  
 **Repository:** https://github.com/jehualli/free-nextjs-admin-dashboard (branch: `nova-analytics`)
 
 ---
@@ -68,7 +68,7 @@
 
 | # | Requirement | Status | Notes |
 |---|-------------|--------|-------|
-| 4.1 | Live and accessible via public URL | ✅ | https://free-nextjs-admin-dashboard-zeta.vercel.app — HTTP 200 confirmed |
+| 4.1 | Live and accessible via public URL | ✅ | https://www.novaanalytics.xyz — HTTP 200 confirmed |
 | 4.2 | Hosted on accepted platform | ✅ | Vercel |
 | 4.3 | HTTPS enabled | ✅ | `strict-transport-security: max-age=63072000; includeSubDomains; preload` header confirmed |
 | 4.4 | Stable deployment | ✅ | Vercel production deploy — status READY, 0 post-deploy runtime errors at scan time |
@@ -93,10 +93,10 @@
 | # | Item | Status | Notes |
 |---|------|--------|-------|
 | 6.1 | GitHub repository link (public) | ✅ | https://github.com/jehualli/free-nextjs-admin-dashboard — branch `nova-analytics` |
-| 6.2 | Live deployment URL | ✅ | https://free-nextjs-admin-dashboard-zeta.vercel.app |
+| 6.2 | Live deployment URL | ✅ | https://www.novaanalytics.xyz |
 | 6.3 | Test credentials | ✅ | `demo@novaanalytics.io` / `NovaDemo2026!` — account confirmed manually via Supabase dashboard; documented in README |
 | 6.4 | Video walkthrough link | ⏳ | Not yet recorded |
-| 6.5 | Notes on known limitations | ✅ | "Known Limitations" section added to README — no tests, no custom domain, social auth buttons not wired |
+| 6.5 | Notes on known limitations | ✅ | "Known Limitations" section added to README — no tests, social auth buttons not wired |
 | 6.6 | Behavioral Questionnaire | ⏳ | External PDF — must be completed and submitted separately |
 
 ---
@@ -110,7 +110,7 @@
 | 7.3 | Prompts shared | 🎁 | Prompts and iteration process documented in `claude-code-logs.md` |
 | 7.4 | CI/CD pipeline | 🎁 | `.github/workflows/ci.yml` — `Lint → Build` on push/PR to `main` and `nova-analytics`; latest run ✅ green |
 | 7.5 | Meaningful tests | ➕ | Not implemented |
-| 7.6 | Custom domain | ➕ | Using default `*.vercel.app` subdomain |
+| 7.6 | Custom domain | 🎁 | `www.novaanalytics.xyz` configured on Vercel |
 | 7.7 | Analytics / monitoring | 🎁 | Vercel Analytics active on all routes via `<Analytics />` in root layout |
 
 ---
@@ -120,12 +120,12 @@
 | Category | Done | Partial / Pending | Not Done |
 |----------|------|-------------------|---------|
 | Repository & Version Control | 7 / 7 | — | — |
-| Whitelabeling | 6 / 7 | 1 (favicon) | — |
+| Whitelabeling | 7 / 7 | — | — |
 | Landing Page | 9 / 9 | — | — |
 | Deployment | 4 / 4 | — | — |
-| Video Walkthrough | — | — | 6 (all pending candidate action) |
-| Submission Package | 2 / 6 | 2 | 2 (video + questionnaire) |
-| Extra Credit | 4 / 7 | — | 3 |
+| Video Walkthrough | — | 6 (pending candidate action) | — |
+| Submission Package | 4 / 6 | — | 2 (video + questionnaire) |
+| Extra Credit | 5 / 7 | — | 2 (tests, social auth) |
 
 ---
 

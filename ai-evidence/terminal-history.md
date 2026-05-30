@@ -282,6 +282,43 @@ EOF
 
 ---
 
+## Post-Phase-5 — Pricing, About, Dark Mode, Bugfixes
+
+```bash
+# Pricing + About sections
+git add -A
+git commit -m "feat(landing): add Pricing and About sections ..."
+git push origin nova-analytics
+# → CI triggered: run 26666754003
+gh run watch 26666754003 --repo jehualli/free-nextjs-admin-dashboard
+# → ✅ success (Lint 27s + Build 34s)
+npx vercel --prod --yes
+# → Aliased: https://www.novaanalytics.xyz  ← custom domain active
+
+# Dark mode toggle on landing
+npm run build
+# ✓ clean
+git add -A
+git commit -m "feat(landing): add dark mode toggle to navigation header ..."
+git push origin nova-analytics
+# → CI run 26667115124 ✅ success
+npx vercel --prod --yes
+
+# CTA background bugfix (white-on-white login button)
+# Root cause: globals.css z-1 on body hides -z-10 children
+# Fix: move bg-brand-500 onto <section> directly
+npm run build
+# ✓ clean
+git add -A
+git commit -m "fix(landing): restore CTA background and hero blobs hidden by body z-index ..."
+git push origin nova-analytics
+# → CI run 26667441472 ✅ success
+npx vercel --prod --yes
+# → Aliased: https://www.novaanalytics.xyz
+```
+
+---
+
 ## Full Commit Timeline
 
 ```
@@ -295,11 +332,16 @@ EOF
 13:33  ab485dd  feat(ci): GitHub Actions + Vercel Analytics — Phase 5
 13:40  dae898e  fix(lint): resolve all ESLint errors — Phase 5
 13:46  5cac3f6  chore: update changelog — Phase 5
+13:52  0595cfb  feat: favicon + README test credentials + limitations
+23:07  2aeb064  feat(landing): Pricing + About sections
+23:19  89dd4f5  feat(landing): dark mode toggle in nav header
+23:29  d6f354b  fix(landing): CTA background + hero blobs (z-index bug)
 ```
 
-**Total session time:** ~2 hours  
-**Phases completed:** 5 core + 2 extra credit  
-**Commits:** 8 (on `nova-analytics` branch)  
-**Files changed:** 45+  
+**Total session time:** ~3 hours  
+**Phases completed:** 5 core + 4 extra credit (CI/CD, analytics, custom domain, AI evidence)  
+**Commits:** 14 (on `nova-analytics` branch)  
+**Files changed:** 50+  
 **Build failures debugged:** 4  
-**CI failures debugged:** 2
+**CI failures debugged:** 2  
+**Live URL:** https://www.novaanalytics.xyz

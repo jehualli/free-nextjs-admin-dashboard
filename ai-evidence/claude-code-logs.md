@@ -145,7 +145,31 @@ All code was generated, reviewed, and committed by Claude Code acting as the pri
 | "proceed with phase 4" | 4 — Deploy | ~110 (README + Vercel config) |
 | "go ahead" | 5 — CI + Monitoring | ~50 (workflow YAML + Analytics) |
 
-**Total new lines authored by Claude Code:** ~1,300 across 45+ files
+**Total new lines authored by Claude Code:** ~1,600 across 50+ files
+
+---
+
+## Post-Phase-5 Changes
+
+### Pricing + About sections
+**Prompt:** "i think i set up the github actions, lets test by adding the actual pricing, about section in the landing"
+
+Added `plans[]` and `values[]` data arrays, inserted `#pricing` (3-tier cards) and `#about` (2-column story + values) sections between Features and CTA. CI triggered automatically on push — green on first run.
+
+### Dark mode toggle on landing page
+**Prompt:** "now we need the way of changing dark mode not only on dashboard or login, also in landing, figure out best position"
+
+Chose nav header placement (between nav links and auth buttons) — same pattern as Vercel, GitHub, Linear. Discovered `ThemeToggleButton` was missing `"use client"`, which masked a Server Component incompatibility. Added `compact` prop for a nav-sized variant.
+
+### CTA background + hero blobs invisible
+**Prompt:** "login button at the very bottom is white and cant be seen since the background is white as well"
+
+Root cause: `globals.css` applies `z-1` to `<body>`, creating a stacking context that `-z-10` child elements fall behind. The CTA section used an `absolute inset-0 -z-10` div for its indigo background — that div was rendering behind the white body background. Fix: moved `bg-brand-500` onto `<section>` directly. Also fixed hero gradient blobs with the same pattern.
+
+### Custom domain
+**Prompt:** (user connected domain in Vercel dashboard)
+
+`www.novaanalytics.xyz` configured. Updated README, CHANGELOG, auditory, and tour.md with the new URL. Extra credit item 7.6 now ✅.
 
 ---
 
@@ -160,3 +184,5 @@ All code was generated, reviewed, and committed by Claude Code acting as the pri
 | `useSearchParams` needs `<Suspense>` wrapper | Caught from build error, wrapped `SignInForm` in signin page |
 | GitHub push rejected — missing `workflow` scope | Read `gh auth status`, ran `gh auth refresh -s workflow`, re-pushed |
 | CI failed — 5 lint errors in pre-existing code | Read each error line, targeted minimal `eslint-disable` comments |
+| "Log in" button invisible (white on white) | Traced root cause to `globals.css` applying `z-1` to `<body>`, which caused `-z-10` backgrounds to render behind the body — moved `bg-brand-500` directly onto the `<section>` element |
+| `ThemeToggleButton` failed in Server Component | Component was missing `"use client"` — worked previously only because it was always inside other client components; added directive and `compact` prop |
